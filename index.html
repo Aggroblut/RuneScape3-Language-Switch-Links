@@ -3,109 +3,195 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RuneScape 3 - Language Switch Links</title>
+    <meta name="color-scheme" content="light dark" />
+    <title>RuneScape 3 – Language Switch Links</title>
     <style>
+        :root {
+            --bg: #e9ebee;
+            --surface: #ffffff;
+            --surface-hover: #f6f3ea;
+            --text: #23272e;
+            --muted: #5d6470;
+            --border: #d5d9df;
+            --accent: #a8770f;
+            --accent-soft: #fbf3df;
+            --link: #1f5fa8;
+            --link-hover: #a8770f;
+            --code-bg: #f3f5f8;
+            --focus: #1f5fa8;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #15181c;
+                --surface: #1e2227;
+                --surface-hover: #262a30;
+                --text: #e4e6ea;
+                --muted: #9aa1ac;
+                --border: #333941;
+                --accent: #e0b04a;
+                --accent-soft: #2c2616;
+                --link: #79b0f0;
+                --link-hover: #e0b04a;
+                --code-bg: #171a1e;
+                --focus: #79b0f0;
+            }
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-size: 1.2em;
-            font-family: "Lucida Grande", sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
             margin: 0;
-            padding: 0;
+            padding: 48px 16px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", "Lucida Grande", system-ui, -apple-system, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 920px;
+            margin: 0 auto;
         }
 
         h1 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 650;
+            margin: 0 0 6px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 24px;
         }
 
-        td {
-            padding: 12px;
-            text-align: left;
-            word-break: break-word;
+        .notice {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 14px 16px;
+            margin-bottom: 24px;
+            background: var(--accent-soft);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
         }
 
-        a {
-            color: #0066cc;
+        .notice strong { color: var(--accent); }
+
+        .list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 16px 18px;
+            border-top: 1px solid var(--border);
+            transition: background-color 0.15s;
+        }
+
+        .row:first-child { border-top: none; }
+        .row:hover { background: var(--surface-hover); }
+
+        .label {
+            font-weight: 600;
+        }
+
+        .label small {
+            display: block;
+            font-weight: 400;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* Full link always visible: wraps anywhere, never truncated */
+        .link {
+            display: block;
+            padding: 8px 10px;
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: "Cascadia Code", Consolas, "SF Mono", Menlo, monospace;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: var(--link);
             text-decoration: none;
+            overflow-wrap: anywhere;
+            word-break: break-all;
         }
 
-        a:hover {
-            color: #cc6600;
+        .link:hover {
+            color: var(--link-hover);
+            border-color: var(--link-hover);
+        }
+
+        .link:focus-visible {
+            outline: 2px solid var(--focus);
+            outline-offset: 2px;
+        }
+
+
+
+        @media (max-width: 640px) {
+            body { padding: 24px 12px; }
+            .row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .row { transition: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Terminate Jagex Launcher via Taskbar Before Switching</h1>
-        <table>
-            <tr>
-                <td><strong>English</strong></td>
-                <td>
-                    <a href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=0/jav_config.ws]">
-                        jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=0/jav_config.ws]
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>German</strong></td>
-                <td>
-                    <a href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=1/jav_config.ws]">
-                        jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=1/jav_config.ws]
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>French</strong></td>
-                <td>
-                    <a href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=2/jav_config.ws]">
-                        jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=2/jav_config.ws]
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Portuguese</strong></td>
-                <td>
-                    <a href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=3/jav_config.ws]">
-                        jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=3/jav_config.ws]
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Beta</strong></td>
-                <td>
-                    <a href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/jav_config_beta.ws]">
-                        jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/jav_config_beta.ws]
-                    </a> 
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Plugin API Beta</strong></td>
-                <td>
-                    <a href="jagex:launch=runescape,args=[configURI=rs-launch://world204.runescape.com/jav_config_beta.ws]">
-                        jagex:launch=runescape,args=[configURI=rs-launch://world204.runescape.com/jav_config_beta.ws]
-                    </a> 
-                </td>
-            </tr>
-        </table>
+<div class="container">
+    <h1>RuneScape 3 language switch</h1>
+    <p class="subtitle">Click a link to start the client in that language.</p>
+
+    <div class="notice">
+        <div><strong>Before switching:</strong> close the Jagex Launcher completely via the taskbar / system tray. Otherwise the link reuses the running launcher and the language won't change.</div>
     </div>
+
+    <ul class="list">
+        <li class="row">
+            <span class="label">English</span>
+            <a class="link" href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=0/jav_config.ws]">jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=0/jav_config.ws]</a>
+        </li>
+        <li class="row">
+            <span class="label">German</span>
+            <a class="link" href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=1/jav_config.ws]">jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=1/jav_config.ws]</a>
+        </li>
+        <li class="row">
+            <span class="label">French</span>
+            <a class="link" href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=2/jav_config.ws]">jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=2/jav_config.ws]</a>
+        </li>
+        <li class="row">
+            <span class="label">Portuguese</span>
+            <a class="link" href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=3/jav_config.ws]">jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/k=5/l=3/jav_config.ws]</a>
+        </li>
+        <li class="row">
+            <span class="label">Beta</span>
+            <a class="link" href="jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/jav_config_beta.ws]">jagex:launch=runescape,args=[configURI=rs-launch://www.runescape.com/jav_config_beta.ws]</a>
+        </li>
+        <li class="row">
+            <span class="label">Plugin API Beta<small>World 204</small></span>
+            <a class="link" href="jagex:launch=runescape,args=[configURI=rs-launch://world204.runescape.com/jav_config_beta.ws]">jagex:launch=runescape,args=[configURI=rs-launch://world204.runescape.com/jav_config_beta.ws]</a>
+        </li>
+    </ul>
+</div>
+
 
 </body>
 </html>
